@@ -11,8 +11,8 @@ The relevant features have been uploaded to the corresponding cloud storage link
 ### 0. Clone and setup
 
 ```
-git clone https://github.com/1POO/FSDO.git fsdo
-cd fsdo
+git clone https://github.com/1POO/MCHD.git mchd
+cd mchd
 ```
 
 ### 1. Prepare datasets
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 You can train the model using only video features or both video and audio features:
 
 ```
-python fsdo/scripts/run_train_with_sub.py
+python mchd/scripts/run_train_with_sub.py
 ```
 
 The best validation accuracy is achieved at the last epoch.
@@ -41,8 +41,8 @@ The best validation accuracy is achieved at the last epoch.
 After training, you can generate `hl_val_submission.jsonl` and `hl_test_submission.jsonl` for validation and test sets by running:
 
 ```
-python fsdo/scripts/run_train_with_sub.py --ckpt_path /path/to/your/checkpoint.pth  --eval_split_name val
-python fsdo/scripts/run_train_with_sub.py --ckpt_path /path/to/your/checkpoint.pth  --eval_split_name test 
+python mchd/scripts/run_train_with_sub.py --ckpt_path /path/to/your/checkpoint.pth  --eval_split_name val
+python mchd/scripts/run_train_with_sub.py --ckpt_path /path/to/your/checkpoint.pth  --eval_split_name test 
 ```
 For more details on submission, see [standalone_eval/README.md](standalone_eval/README.md).
 
@@ -55,7 +55,7 @@ For more details on submission, see [standalone_eval/README.md](standalone_eval/
 Similar to QVHighlights, you can train the model on the TVSum dataset:
 
 ```
-python fsdo/scripts/tvsum/run_train_tvsum.py
+python mchd/scripts/tvsum/run_train_tvsum.py
 ```
 ## Charades-STA
 
@@ -64,7 +64,7 @@ python fsdo/scripts/tvsum/run_train_tvsum.py
 Similar to QVHighlights, you can train the model on the Charades-STA dataset:
 
 ```
-python fsdo/scripts/charades/run_train_charades.py
+python mchd/scripts/charades/run_train_charades.py
 ```
 
 ## Citation
@@ -72,12 +72,5 @@ python fsdo/scripts/charades/run_train_charades.py
 If you find this repository useful, please cite our work:
 
 ```
-@article{zhang2026fine,
-  title={Fine-grained semantics-driven decoupling optimization for joint video moment retrieval and highlight detection},
-  author={Zhang, Fuwei and Liang, Peiyuan and Feng, Yuxin and Han, Weiming and Wang, Boying and Shen, Yuanyuan and Zhai, Shuangjiao and Wang, Alex Jinpeng},
-  journal={Knowledge-Based Systems},
-  pages={116374},
-  year={2026},
-  publisher={Elsevier}
-}
+...
 ```
